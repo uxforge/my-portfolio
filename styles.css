@@ -1,10 +1,15 @@
 /* === Global Settings === */
+*{
+    box-sizing: border-box;
+} 
+
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f4f4f4;
   color: #333;
   scroll-behavior: smooth;
+  overflow-x: hidden;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -156,7 +161,9 @@ button:hover {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s;
-  white-space: nowrap;
+  white-space: normal;
+  max-width: 200px;
+  word-wrap: break-word;
 }
 
 .social-links a:hover::after {
@@ -174,19 +181,32 @@ footer {
 }
 
 /* === Responsive === */
+*{
+    box-sizing: border-box;
+}
+
 @media(max-width: 768px) {
+    body{
+        max-width: fit-content;
+        margin: auto;
+    }
+
   .header-logo {
     flex-direction: column;
     text-align: center;
   }
 
   section {
-    padding: 2rem 5%;
+    padding: 2rem 2%;
   }
 
   .profile-img {
-    width: 120px;
+    width: 100px;
     height: auto;
+  }
+
+  .social-links a::after{
+    display: none;
   }
 }
 
